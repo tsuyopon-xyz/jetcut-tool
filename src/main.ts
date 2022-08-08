@@ -106,11 +106,10 @@ const detectSilenceTime = async (inputFile: string) => {
   });
 };
 
-const inputFile = getResourcePath('original.mp4');
-
 const run = async () => {
+  const inputFile = getResourcePath('original.mp4');
   const cutTimeList = await detectSilenceTime(inputFile);
-  cutSilence(getResourcePath('original.mp4'), cutTimeList);
+  cutSilence(inputFile, cutTimeList);
 };
 
 run();
